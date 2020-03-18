@@ -4,6 +4,8 @@ SpringScan
 The SpringScan library is written in kotlin, so this would need the project to support the Kotlin language and its dependencies
 
 ```gradle
+    implementation 'com.springscan.sdk:springscan:1.0.1'
+
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.4'
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'com.squareup.retrofit2:retrofit:2.7.2'
