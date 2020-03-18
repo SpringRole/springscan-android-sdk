@@ -11,7 +11,7 @@ The SpringScan library is written in kotlin, so this would need the project to s
     implementation "com.squareup.okhttp3:okhttp:4.4.0"
 ```
 
-you would also need to include this in the main buil.gradle file in the all projects section
+you would also need to include this in the main build.gradle file in the all projects section
 
 ```gradle
     allprojects {
@@ -24,12 +24,12 @@ you would also need to include this in the main buil.gradle file in the all proj
 Setup
 -----
 
-The SDK has to be initialized one before making any APICalls using
+The SDK has to be initialized one before making any API calls using
 
 SpringScan.initialize(this, "YOUR_COMPANY_TOKEN")
 
-Then you can use the singleton instance SpringScan.getAPIInstance() to make use of our available api calls, SpringScan.getAPIInstance().login()
-should be called to generate the authentication token needed for most other calls
+Then you can use the singleton instance SpringScan.getAPIInstance() to make use of our available api calls,
+SpringScan.getAPIInstance().login(), should be called to generate the authentication token needed for most other calls
 
 Acknowledgements
 ----------------
@@ -38,7 +38,7 @@ SpringScan uses the following open source libraries:
 
 - [OkHttp](https://github.com/square/okhttp) - Copyright Square, Inc.
 - [Gson](https://github.com/google/gson) - Copyright Google Inc.
-- [Retrofit](https://square.github.io/retrofit/)
+- [Retrofit](https://square.github.io/retrofit/) - Copyright Square, Inc.
 
 License
 -------
