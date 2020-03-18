@@ -1,0 +1,3 @@
+include ':SpringScanSDK'
+include ':app'
+rootProject.name = "SpringScan SDK Example"

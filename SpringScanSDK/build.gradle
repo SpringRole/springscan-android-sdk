@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'com.jfrog.bintray'
+    id 'com.github.dcendents.android-maven'
+}
+
+ext {
+
+    bintrayRepo = "Maven"
+    bintrayName = "com.springscan.sdk"
+
+    libraryName = 'SpringScanSDK'
+
+    publishedGroupId = 'com.springscan.sdk'
+    artifact = 'springscan'
+    libraryVersion = '1.0.1'
+
+    libraryDescription = "An android library which wraps the SpringScan REST API's"
+    siteUrl = 'https://github.com/SpringRole/springscan-android-sdk'
+    gitUrl = 'https://github.com/SpringRole/springscan-android-sdk.git'
+    developerId = 'droidluv'
+    developerName = 'Sebi Sheldin Sebastian'
+    developerEmail = 'dragonrough@gmail.com'
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.4'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.7.2'
+    implementation "com.squareup.retrofit2:converter-gson:2.7.2"
+    implementation "com.squareup.okhttp3:okhttp:4.4.0"
+}
+
+repositories {
+    mavenCentral()
+}
+
+if(project.rootProject.file('local.properties').exists()){
+    apply from: 'installv1.gradle'
+    apply from: 'bintrayv1.gradle'
+}
