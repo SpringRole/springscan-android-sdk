@@ -26,7 +26,7 @@ you would also need to include this in the main build.gradle file in the all pro
 Setup
 -----
 
-The SDK has to be initialized one before making any API calls using
+The SDK has to be initialized once before making any API calls using
 
 `SpringScan.initialize(this, "YOUR_COMPANY_TOKEN")`
 
@@ -54,8 +54,8 @@ The login function accepts a username and password and returns a LoginResponse o
 
 ## Upload
 The upload function can be used to upload document images to SpringScan servers in return for a image url, it accepts a bitmap file as 
-first parameter and a doc type and reference to indicate which document type you are uploading, the person id with which you want to
-associate like Aadhar, Pan, Voter, Driving License, Face Image(Selfie) 
+first parameter and a doc type and reference to indicate which document type you are uploading like Aadhar, Pan, Voter,
+Driving License, Face Image(Selfie), the person id with which you want to associate. 
 
 ```kotlin
     SpringScan.getAPIInstance().upload(myCapturedImageBitmap, DocType.AADHAAR, "person_id", object: APICallback<UploadResponse>{
@@ -193,7 +193,8 @@ This function triggers a government verification for pan cards and accepts the d
 ```
 
 ## Pan verification without OCR
-This function triggers a government verification for pan cards and accepts the date of birth, name on the card, pan card number and person id to do verification without OCR
+This function triggers a government verification for pan cards and accepts the date of birth, name on the card,
+pan card number and person id to do verification without OCR
 
 ```kotlin
     SpringScan.getAPIInstance().verifyPanWithoutOCR("Date of Birth", "Name on Card", "Pan ID Number", "Person ID", object: APICallback<PanResponse>{
