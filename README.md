@@ -28,10 +28,10 @@ Setup
 
 The SDK has to be initialized one before making any API calls using
 
-SpringScan.initialize(this, "YOUR_COMPANY_TOKEN")
+`SpringScan.initialize(this, "YOUR_COMPANY_TOKEN")`
 
-Then you can use the singleton instance SpringScan.getAPIInstance() to make use of our available api calls,
-SpringScan.getAPIInstance().login(), should be called to generate the authentication token needed for most other calls
+Then you can use the singleton instance `SpringScan.getAPIInstance()` to make use of our available api calls,
+`SpringScan.getAPIInstance().login()`, should be called to generate the authentication token needed for most other calls
 
 Getting Started
 ---------------
