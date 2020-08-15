@@ -109,7 +109,7 @@ class SpringAPI(private val context: Context, apiToken: String) {
     }
 
     fun initializePerson(
-        frontImageURL: String?, backImageURL: String?, selfie: String?, docType: DocType,
+        frontImageURL: String, backImageURL: String?, selfie: String?, docType: DocType,
         apiCallback: APICallback<RootResponse>,
         coroutineScope: CoroutineScope = GlobalScope
     ): Job {
